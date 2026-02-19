@@ -38,4 +38,12 @@
  */
 export function iplPointsTable(matches) {
   // Your code here
+  if(!Array.isArray(matches) || matches.length === 0){
+    return [];
+  }
+  let standings = [];
+  for(let i = 0; i < matches.length; i++){
+    
+  }
+
 }

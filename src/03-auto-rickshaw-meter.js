@@ -33,4 +33,22 @@
  */
 export function calculateAutoFare(distance, waitingMinutes = 0) {
   // Your code here
+  if(distance <= 0 || waitingMinutes < 0 || typeof distance !== "number"){
+    return -1;
+  }
+  let charge = 0;
+
+  while(distance > 0){
+    if(Math.ceil(distance) > 5){
+      charge += 10;
+    }
+    else if(Math.ceil(distance) >= 2){
+      charge += 15;
+    }else{
+      charge += 30;
+    }
+    distance--;
+  }
+  charge += Math.ceil(waitingMinutes / 2) * 5;
+  return charge;
 }
